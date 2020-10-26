@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-10-22 11:54:38
+ * @LastEditTime: 2020-10-26 17:49:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \stm32f407vet6-handheld\applications\bosh_bme280.c
+ */
 /****************************************************************************
  *
  * File Name£º
@@ -14,7 +22,7 @@
 /*----------------------------------------------------------------------------*
 **                             Dependencies                                   *
 **----------------------------------------------------------------------------*/
-#include <bme280.h>
+#include <bosh_bme280.h>
 
 /**---------------------------------------------------------------------------*
  **                            Debugging Flag                                 *
@@ -61,7 +69,7 @@ static int rt_sw_iic_bosh_bme280_init(void)
 
     return RT_EOK;
 }
-INIT_COMPONENT_EXPORT(rt_hw_spi_oled_init);
+INIT_COMPONENT_EXPORT(rt_sw_iic_bosh_bme280_init);
 /*----------------------------------------------------------------------------*
 **                             Public Function                                *
 **----------------------------------------------------------------------------*/
