@@ -44,15 +44,12 @@ extern   "C"
 {
 #endif
 
-/* ########################## Debug Selection ############################# */
+/* ############################ Debug Selection ############################# */
 #define BME280_DEBUG
 #define OLED_DEBUG
 #define W25Q128_DEBUG
 
-/* ########################## Version Selection ############################# */
-#define VERSION
-
-/* ########################## PIN USE Selection ############################# */
+/* ########################### PIN USE Selection ############################ */
 #define CHARGE_PIN
 #define SWITCH_PIN
 #define OLED_PIN
@@ -60,13 +57,8 @@ extern   "C"
 #define RGB_PIN
 #define BME280_PIN
 
-/*----------------------------------------------------------------------------*
-**                                Board Version                               *
-**----------------------------------------------------------------------------*/
-//#define VERSION
-#ifdef VERSION
-#define BUILD (__DATE__ " " __TIME__)
-#endif
+/* ########################### Command Selection ############################ */
+#define Board_Command
 
 /*----------------------------------------------------------------------------*
 **                                                                            *
@@ -151,9 +143,15 @@ extern   "C"
 
 
 /*----------------------------------------------------------------------------*
-**                             Data Structures                                *
+**                                                                            *
+**                            Board Command Define                            *
+**                                                                            *
 **----------------------------------------------------------------------------*/
-
+//#define Board_Command
+#ifdef Board_Command
+#define BUILD (__DATE__ " " __TIME__)
+#define VERSION ("V1.1")
+#endif
 
 
 

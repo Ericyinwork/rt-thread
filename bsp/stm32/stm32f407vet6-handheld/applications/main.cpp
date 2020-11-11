@@ -1,56 +1,114 @@
-/*
- * Copyright (c) 2006-2018, RT-Thread Development Team
+/****************************************************************************
  *
- * SPDX-License-Identifier: Apache-2.0
+ * File Name:
+ *  
+ * Author:
+ *  
+ * Date:
+ * 
+ * Descriptions:
+ * 
  *
- * Change Logs:
- * Date           Author       Notes
- * 2018-11-06     SummerGift   first version
- * 2018-11-19     flybreak     add stm32f407-atk-explorer bsp
- */
-
+ ******************************************************************************/
+/*----------------------------------------------------------------------------*
+**                             Dependencies                                   *
+**----------------------------------------------------------------------------*/
+/* <Header file of standard Library> */
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
-#include <rtthread.h>
+#include <stdint.h>
+#include <stdbool.h>
+/*----------------------------------------------------------------------------*/
+/* "Header file of nonstandard Library" */
+#include "vcom_send.h"
+#include "common.h"
+#include "oled_gui.h"
 
-#include "board_config.h"
-
+/**---------------------------------------------------------------------------*
+ **                            Debugging Flag                                 *
+ **---------------------------------------------------------------------------*/
+/* app debug */
+//#define APP_DEBUG
+#ifdef APP_DEBUG
+	#define APP_TRACE rt_kprintf
+#else
+	#define APP_TRACE(...)
+#endif
+/**---------------------------------------------------------------------------*
+**                             Compiler Flag                                  *
+**----------------------------------------------------------------------------*/
 #ifdef __cplusplus
 extern   "C"
 {
 #endif
 
+/*----------------------------------------------------------------------------*
+**                             Mcaro Definitions                              *
+**----------------------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------------------------*
+**                             Local Vars                                     *
+**----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*
+**                             Extern Function                                *
+**----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*
+**                             Local Function                                 *
+**----------------------------------------------------------------------------*/
+
+
+
+void app_init(void)
+{
+	vcom_module_init();
+}
+/*----------------------------------------------------------------------------*
+**                             Public Function                                *
+**----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*
+**                             Function Define                                *
+**----------------------------------------------------------------------------*/
+/*************************************************
+* Function:
+* Description:
+* Author:
+* Returns: 
+* Parameter:
+* History:
+*************************************************/
 int main(void)
 {
-    int count = 1;
-	rt_kprintf("hello_oled!/s");
-	/* turn on the OLED 13.5V Power */
-	char buf[]= "hello rt-thread!\r\n";	
-	
-	rt_device_t dev =RT_NULL;	
-	dev =rt_device_find("vcom");
-	
-	if(dev)
-	rt_device_open(dev,RT_DEVICE_FLAG_RDWR);
-	else
-		return -RT_ERROR;
-		rt_kprintf("hello_oled_gui!\r\n");
+	int main_ret = 0;
+
+	/* app module init */
+	app_init();
 
 
-//	u8g2_full_buffer_u8g2_logo();
-    while (1)
-    {
 
-      rt_thread_mdelay(500);
-		rt_device_write(dev,0,buf,rt_strlen(buf));
+	/* into loop */
+	while (1)
+	{	
+		vcom_event_recved();		
 			
-    }
-
-    return RT_EOK;
+	}	
+	
+	return main_ret;
 }
 
+
+
+/**---------------------------------------------------------------------------*
+ **                         Compiler Flag                                     *
+ **---------------------------------------------------------------------------*/
 #ifdef   __cplusplus
 }
 #endif
-// End of main.cpp
+// End of xxx.c
+

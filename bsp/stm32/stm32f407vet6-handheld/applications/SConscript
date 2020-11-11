@@ -1,8 +1,8 @@
 '''
 Author: your name
 Date: 2020-10-22 11:54:38
-LastEditTime: 2020-10-26 11:53:19
-LastEditors: your name
+LastEditTime: 2020-10-28 16:01:19
+LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: \stm32f407vet6-handheld\applications\SConscript
 '''
@@ -14,10 +14,14 @@ CPPPATH = [cwd, str(Dir('#'))]
 src     = Split("""
 main.cpp
 oled_gui.cpp
-vcom.c
+vcom_cmd.c
 bosh_bme280.c
 w25q128.c
 rgb.c
+strref.c
+util.c
+vcom_send.c
+cyclequeue.c
 template.txt
 """)
 

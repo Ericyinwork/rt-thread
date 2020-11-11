@@ -1,18 +1,35 @@
 /****************************************************************************
  *
- * File Name£º
+ * File Name:vcom_cmd
  *  
- * Author£º
+ * Author:
  *  
- * Date£º
+ * Date:
  * 
- * Descriptions:
+ * Descriptions:use usb data cmd 
  * 
  *
  ******************************************************************************/
+#ifndef VCOM_CMD_H_
+#define VCOM_CMD_H_
+
 /*----------------------------------------------------------------------------*
 **                             Dependencies                                   *
 **----------------------------------------------------------------------------*/
+/* <Header file of standard Library> */
+#include <stdint.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <rtthread.h>
+
+/* "Header file of nonstandard Library" */
+#include "board_config.h"
+#include "strref.h"
+#include "common.h"
+#include "util.h"
 
 
 /**---------------------------------------------------------------------------*
@@ -30,6 +47,7 @@ extern   "C"
 /*----------------------------------------------------------------------------*
 **                             Mcaro Definitions                              *
 **----------------------------------------------------------------------------*/
+
 
 /*----------------------------------------------------------------------------*
 **                             Data Structures                                *
@@ -55,15 +73,34 @@ extern   "C"
 **                             Function Define                                *
 **----------------------------------------------------------------------------*/
 /*************************************************
-* Function:
-* Description:
+* Function:VCOM_CMD_init
+* Description:init vcom_cmd 
 * Author:
 * Returns: 
 * Parameter:
 * History:
 *************************************************/
+void CMD_init(void);
 
+/*************************************************
+* Function:VCOM_CMD_ClearPacketBuf
+* Description:clear buffer
+* Author:
+* Returns: 
+* Parameter:
+* History:
+*************************************************/
+void CMD_ClearPacketBuf(void);
 
+/*************************************************
+* Function:VCOM_CMD_ClearPacketBuf
+* Description:init vcom_cmd 
+* Author:
+* Returns: 
+* Parameter:
+* History:
+*************************************************/
+void CMD_OnRecvData(const uint8_t* pcu8Dtata, uint32_t u32DataLen);
 
 
 /**---------------------------------------------------------------------------*
@@ -73,4 +110,5 @@ extern   "C"
 }
 #endif
 // End of xxx.c
-
+#endif  
+// End of xxx.H
