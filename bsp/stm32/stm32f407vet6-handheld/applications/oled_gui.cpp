@@ -45,8 +45,7 @@ extern   "C"
 /*----------------------------------------------------------------------------*
 **                             Mcaro Definitions                              *
 **----------------------------------------------------------------------------*/
-static U8G2_SH1107_PIMORONI_128X128_F_4W_HW_SPI u8g2(U8G2_R0, 
-    /* cs=*/ OLED_SPI_PIN_CS, /* dc=*/ OLED_SPI_PIN_DC, /* reset=*/ OLED_SPI_PIN_RES);
+static U8G2_SH1107_PIMORONI_128X128_F_4W_HW_SPI u8g2(U8G2_R0,/* cs=*/ OLED_SPI_PIN_CS, /* dc=*/ OLED_SPI_PIN_DC, /* reset=*/ OLED_SPI_PIN_RES);
 
 
 /*----------------------------------------------------------------------------*
