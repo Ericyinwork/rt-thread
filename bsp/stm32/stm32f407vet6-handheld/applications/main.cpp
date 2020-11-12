@@ -86,6 +86,7 @@ void app_init(void)
 int main(void)
 {
 	int main_ret = 0;
+	rt_kprintf("test!\r\n");
 
 	/* app module init */
 	app_init();

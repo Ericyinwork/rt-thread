@@ -24,6 +24,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <rtthread.h>
+#include <rtdevice.h>
 
 /* "Header file of nonstandard Library" */
 #include "board_config.h"
