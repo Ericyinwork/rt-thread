@@ -23,8 +23,25 @@
 **----------------------------------------------------------------------------*/
 /* <Header file of standard Library> */
 /*----------------------------------------------------------------------------*/
+
+
+/* <Header file of standard Library> */
+#include <stdint.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <rtthread.h>
+#include <rtdevice.h>
+
 /* "Header file of nonstandard Library" */
+#include "board_config.h"
+#include "strref.h"
+#include "common.h"
+#include "util.h"
 #include "vcom_cmd.h"
+#include "vcom_send.h"
 /**---------------------------------------------------------------------------*
  **                            Debugging Flag                                 *
  **---------------------------------------------------------------------------*/

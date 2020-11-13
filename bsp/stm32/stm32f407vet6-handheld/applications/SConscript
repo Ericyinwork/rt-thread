@@ -22,7 +22,6 @@ strref.c
 util.c
 vcom_send.c
 cyclequeue.c
-template.txt
 """)
 
 group = DefineGroup('Applications', src, depend = [''], CPPPATH = CPPPATH)
