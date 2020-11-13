@@ -89,14 +89,14 @@ int main(void)
 	rt_kprintf("test!\r\n");
 
 	/* app module init */
-	app_init();
+	//app_init();
 
 
 
 	/* into loop */
 	while (1)
 	{	
-		vcom_event_recved();		
+		//vcom_event_recved();		
 			
 	}	
 	
