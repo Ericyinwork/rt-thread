@@ -46,5 +46,8 @@ Email地址：ericyinwork@163.com
 
 系统级别：登录当前操作系统用户范围
 
+## 异常报错解决
 
+![image-20210617142606742](D:\Work\RT-THREAD\rt-thread-item\git-rt-thread\git_notes\md_screenshot\image-20210617142606742.png)
 
+$ git config --global http.sslVerify "false"
