@@ -1,5 +1,7 @@
 # git cmd
 
+## 用户名设置
+
 项目级别仓库用户名设置：
 
 * git config user.name Ericyinwork
@@ -18,7 +20,28 @@
 
 * cat ~/.gitconfig
 
+## 基本操作
 
+* git status									查看工作区、暂存区状态
+
+* git add ./git add [文件名]		提交到暂存区，并且转换换行符
+* git rm -cached [文件名]		     从暂存区撤回
+* git commit -m"commit message" [file name]	将暂存区的内容提交到本地库
+* git restore [文件名]			  	撤销某个文件修改的操作
+* git reset HEAD [file]			  可以吧暂存区的修改撤销掉（unstage），重新放回工作区
+### 查看历史记录
+* git log 					   查看版本历史记录
+* git log --pretty=oneline		 每个历史只显示一行（hash值和日志）
+* git log --oneline			   每个历史只显示一行且显示hash的部分值
+* git reflog				  现实历史只显示一行，并且显示指针（要移动到版本多少步）
+### 版本前进后退
+* git reset --hard [局部索引值]	
+* git reset --hard HEAD^^		注：一个^表示后退一步，n 个^表示后退 n 步
+* git reset --hard HEAD~n		注：表示后退 n 步
+### 比较文件差异
+git diff [文件名]				  将工作区中的文件和暂存区进行比较
+git diff [本地库中的文件和本地库历史记录比较]
+## 分支管理
 
 
 
@@ -48,6 +71,9 @@ Email地址：ericyinwork@163.com
 
 ## 异常报错解决
 
-![image-20210617142606742](F:\rt-thread\git_notes\md_screenshot\image-20210617142606742.png)
+![image-20210617142606742](F:\rt-thread\documentation\git_notes\git_note.assets\image-20210617142606742.png)
+
+重新登录
 
 $ git config --global http.sslVerify "false"
+
